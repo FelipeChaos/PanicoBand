@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EPK PÁNICO — banda de metal bogotana">
+  <title>EPK — PÁNICO</title>
+  <link rel="icon" href="assets/panico-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body.epk-page { background:#eceae6; color:#111; }
+    .epk-wrap { max-width:1100px; margin:auto; padding:40px 24px 90px; }
+    .epk-toolbar { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:25px; }
+    .epk-sheet { background:#fff; box-shadow:0 20px 60px rgba(0,0,0,.12); margin-bottom:30px; overflow:hidden; }
+    .epk-cover { min-height:600px; padding:70px; background:#050505; color:#fff; position:relative; display:flex; flex-direction:column; justify-content:flex-end; }
+    .epk-cover img { width:min(620px,100%); margin-bottom:auto; }
+    .epk-cover h1 { font-size:clamp(70px,12vw,150px); line-height:.8; margin:0; font-family:"Archivo Black",sans-serif; letter-spacing:-.06em; }
+    .epk-cover h1 span { color:#c81616; }
+    .epk-page-content { padding:60px 70px; }
+    .epk-page-content h2 { font-family:"Archivo Black",sans-serif; font-size:54px; line-height:.9; text-transform:uppercase; margin:0 0 25px; }
+    .epk-page-content h2 span { color:#c81616; }
+    .epk-page-content p { font-size:18px; line-height:1.7; max-width:800px; }
+    .epk-two { display:grid; grid-template-columns:1fr 1fr; gap:35px; }
+    .epk-photo { min-height:300px; background:#111; display:grid; place-items:center; color:#777; text-transform:uppercase; font-family:"Barlow Condensed"; font-size:22px; letter-spacing:.08em; }
+    .epk-member { border-top:3px solid #111; padding-top:18px; margin-top:18px; }
+    .epk-member h3 { margin:0; font-family:"Barlow Condensed"; font-size:31px; text-transform:uppercase; }
+    .epk-meta { color:#c81616; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .epk-list { padding-left:20px; line-height:2; }
+    .epk-contact { background:#050505; color:#fff; }
+    .epk-contact a { color:#fff; }
+    .print-note { font-size:13px !important; color:#777; }
+    @media(max-width:700px){
+      .epk-cover,.epk-page-content{padding:35px 25px}
+      .epk-two{grid-template-columns:1fr}
+      .epk-page-content h2{font-size:42px}
+    }
+    @media print {
+      body.epk-page { background:#fff; }
+      .site-header,.epk-toolbar { display:none !important; }
+      .epk-wrap { padding:0; max-width:none; }
+      .epk-sheet { box-shadow:none; margin:0; page-break-after:always; }
+      .epk-sheet:last-child { page-break-after:auto; }
+    }
+  </style>
+</head>
+<body class="epk-page">
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/panico-logo.png" alt="PÁNICO"></a>
+    <nav class="nav"><a href="index.html">← SITIO WEB</a></nav>
+  </header>
+
+  <div class="epk-wrap">
+    <div class="epk-toolbar">
+      <strong>EPK / PÁNICO</strong>
+      <button class="btn btn-red" onclick="window.print()">IMPRIMIR / GUARDAR PDF</button>
+    </div>
+
+    <article class="epk-sheet epk-cover">
+      <img src="assets/panico-logo.png" alt="PÁNICO">
+      <div>
+        <div class="eyebrow">ELECTRONIC PRESS KIT · 2026</div>
+        <h1>METAL<br><span>SIN JAULAS.</span></h1>
+        <p>Bogotá, Colombia · Banda de 4 integrantes</p>
+      </div>
+    </article>
+
+    <article class="epk-sheet epk-page-content">
+      <div class="eyebrow">01 / ARTIST STATEMENT</div>
+      <h2>UNA BANDA<br><span>QUE TIENE ALGO QUE DECIR.</span></h2>
+      <p id="epk-manifesto"></p>
+      <p id="epk-bio"></p>
+      <div class="epk-two" style="margin-top:45px">
+        <div>
+          <div class="epk-meta">Ciudad</div><p>Bogotá, Colombia</p>
+          <div class="epk-meta">Formato</div><p>Banda en vivo · 4 integrantes</p>
+        </div>
+        <div>
+          <div class="epk-meta">Género</div><p>Metal / propuesta abierta</p>
+          <div class="epk-meta">Estado</div><p>En desarrollo de repertorio y material de estudio</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="epk-sheet epk-page-content">
+      <div class="eyebrow">02 / MEMBERS</div>
+      <h2>LOS<br><span>CUATRO.</span></h2>
+      <div id="epk-members"></div>
+    </article>
+
+    <article class="epk-sheet epk-page-content">
+      <div class="eyebrow">03 / MEDIA & MATERIAL</div>
+      <h2>MEDIA<br><span>LIBRARY.</span></h2>
+      <p>El material audiovisual de PÁNICO se irá incorporando progresivamente. Para contratación, el EPK debe acompañarse de fotografías de prensa en alta resolución y enlaces de video.</p>
+      <div class="epk-two" style="margin-top:35px">
+        <div class="epk-photo">FOTO DE BANDA / HORIZONTAL</div>
+        <div class="epk-photo">FOTO DE BANDA / VERTICAL</div>
+      </div>
+      <h3 style="margin-top:45px;font-family:'Barlow Condensed';font-size:30px;text-transform:uppercase">Enlaces</h3>
+      <ul class="epk-list">
+        <li>Instagram: <span id="epk-instagram"></span></li>
+        <li>YouTube: agregar enlace cuando exista</li>
+        <li>Drive / dossier de prensa: agregar enlace si se requiere</li>
+        <li>Música grabada: próximamente</li>
+      </ul>
+    </article>
+
+    <article class="epk-sheet epk-page-content epk-contact">
+      <div class="eyebrow">04 / BOOKING & CONTACT</div>
+      <h2>HABLEMOS<br><span>DE FECHAS.</span></h2>
+      <p>Disponible para eventos, festivales, bares, escenarios independientes, showcases, prensa y colaboraciones.</p>
+      <div class="epk-two" style="margin-top:45px">
+        <div>
+          <div class="epk-meta">Instagram</div><p id="epk-instagram-2"></p>
+          <div class="epk-meta">Email</div><p id="epk-email"></p>
+        </div>
+        <div>
+          <div class="epk-meta">WhatsApp / Booking</div><p id="epk-whatsapp"></p>
+          <div class="epk-meta">Ubicación</div><p>Bogotá, Colombia</p>
+        </div>
+      </div>
+      <p class="print-note">Nota: este EPK está preparado para ser actualizado a medida que PÁNICO incorpore grabaciones, fechas, fotografías y datos definitivos.</p>
+    </article>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById("epk-manifesto").textContent = PANICO.manifesto;
+    document.getElementById("epk-bio").textContent = PANICO.bio;
+    document.getElementById("epk-instagram").textContent = PANICO.band.instagram;
+    document.getElementById("epk-instagram-2").textContent = PANICO.band.instagram;
+    document.getElementById("epk-email").textContent = PANICO.band.contactEmail || "Agregar correo de booking";
+    document.getElementById("epk-whatsapp").textContent = PANICO.band.bookingWhatsapp || "Agregar WhatsApp de booking";
+
+    const wrap = document.getElementById("epk-members");
+    PANICO.members.forEach(m => {
+      const el = document.createElement("div");
+      el.className = "epk-member";
+      el.innerHTML = `<div class="epk-meta">${m.role}</div><h3>${m.name}</h3><p>${m.bio}</p>`;
+      wrap.appendChild(el);
+    });
+  </script>
+</body>
+</html>
