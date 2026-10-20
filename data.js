@@ -56,21 +56,21 @@ window.PANICO = {
       name: "Hoodie PÁNICO",
       description: "Hoodie negro con el logo pequeño en el frente.",
       price: "Precio por confirmar",
-      sizes: "Tallas por confirmar",
+      sizes: "S · M · L · XL",
       image: "https://drive.google.com/uc?export=view&id=1nw814Xuxfta4ALr7GA9vIhaN6tiocfNd"
     },
     {
       name: "Camiseta PÁNICO · Negra",
       description: "Camiseta negra con logo pequeño al frente, en el pecho.",
       price: "Precio por confirmar",
-      sizes: "Tallas por confirmar",
+      sizes: "S · M · L · XL",
       image: ""
     },
     {
       name: "Camiseta PÁNICO · Blanca",
       description: "Camiseta blanca con logo pequeño al frente, en el pecho.",
       price: "Precio por confirmar",
-      sizes: "Tallas por confirmar",
+      sizes: "S · M · L · XL",
       image: ""
     }
   ]
