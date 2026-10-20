@@ -112,17 +112,37 @@
     whatsapp.rel = "noopener";
   }
 
+  const header = document.querySelector(".site-header");
+  let scrollTicking = false;
+  const updateHeader = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
+    scrollTicking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateHeader);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+  updateHeader();
+
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
+  const setMenuOpen = open => {
+    toggle?.setAttribute("aria-expanded", String(open));
+    nav?.classList.toggle("is-open", open);
+    const label = toggle?.querySelector(".menu-label");
+    if (label) label.textContent = open ? "Cerrar" : "Menú";
+    toggle?.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    const icon = toggle?.querySelector('[aria-hidden="true"]');
+    if (icon) icon.textContent = open ? "×" : "☰";
+  };
   toggle?.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    toggle.textContent = open ? "MENÚ ☰" : "CERRAR ×";
-    nav?.classList.toggle("nav-open", !open);
+    setMenuOpen(toggle.getAttribute("aria-expanded") !== "true");
   });
-  nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-    nav.classList.remove("nav-open");
-    toggle?.setAttribute("aria-expanded", "false");
-    if (toggle) toggle.textContent = "MENÚ ☰";
-  }));
+  nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenuOpen(false)));
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 768px)").matches) setMenuOpen(false);
+  });
 })();
