@@ -48,13 +48,14 @@ PANICO.merch.forEach((item, i) => {
   const card = document.createElement("article");
   card.className = "merch-card";
   card.innerHTML = `
-    <div class="merch-visual merch-visual-${i + 1}" aria-hidden="true"><span class="merch-garment">${i === 0 ? "HOODIE" : "TEE"}</span><span class="merch-mark">PÁNICO</span></div>
+    <div class="merch-visual merch-visual-${i + 1}" aria-hidden="true"><span class="merch-garment">${i === 0 ? "HOODIE" : "TEE"}</span><img class="merch-mark-img" src="assets/panico-logo.png" alt="Logo PÁNICO"></div>
     <div class="merch-info"><div class="merch-type">MERCH OFICIAL · 0${i + 1}</div><h3>${escapeHTML(item.name)}</h3><p>${escapeHTML(item.description)}</p><div class="merch-meta"><span>PRECIO</span><strong>${escapeHTML(item.price)}</strong></div><div class="merch-meta"><span>TALLAS</span><strong>${escapeHTML(item.sizes)}</strong></div></div>`;
   merchGrid.appendChild(card);
 });
 
 const instagram = document.getElementById("instagram");
 if (instagram) instagram.href = PANICO.band.instagram;
+document.querySelectorAll(".instagram-cta").forEach(link => { link.href = PANICO.band.instagram; });
 if (PANICO.band.contactEmail) {
   const email = document.getElementById("email");
   email.textContent = PANICO.band.contactEmail;
