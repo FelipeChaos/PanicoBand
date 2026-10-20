@@ -49,32 +49,29 @@ window.PANICO = {
       type: "Foto grupal",
       url: "assets/photos/panico-banda.jpg",
       image: "assets/photos/panico-banda.jpg",
-      description: "Cuatro perfiles presentados. La historia sigue creciendo."
+      description: "Cuatro músicos. Una descarga en construcción."
     }
   ],
   merch: [
     {
       name: "Hoodie PÁNICO",
-      description: "Hoodie negro con el logo pequeño en el frente.",
+      description: "Hoodie negro con el logo pequeño en el frente, sobre el pecho.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
-      image: "assets/logo-original-red-white.png",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Negra",
-      description: "Camiseta negra con logo pequeño al frente, en el pecho.",
+      description: "Camiseta negra con el logo pequeño al frente, sobre el pecho.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
-      image: "assets/logo-original-red-white.png",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Blanca",
-      description: "Camiseta blanca con logo pequeño al frente, en el pecho.",
+      description: "Camiseta blanca con el logo pequeño al frente, sobre el pecho.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
-      image: "assets/logo-original-black-red.png",
       logo: "assets/logo-original-black-red.png"
     }
   ]
