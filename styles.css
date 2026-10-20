@@ -146,3 +146,37 @@ body { overflow-x: hidden; }
 .gallery-dot { width:1.5rem; height:3px; background:#57534e; border:0; padding:0; cursor:pointer; }
 .gallery-dot[aria-current="true"] { background:#c82028; }
 @media (prefers-reduced-motion:reduce) { .gallery-stage img,.gallery-control { transition:none; } }
+
+
+/* Merch actualizado: fotografía de producto realista con marca integrada en el mockup. */
+#merch-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem; align-items:start; }
+.merch-card { display:grid; grid-template-columns:minmax(0,1fr); gap:0; padding:0; overflow:hidden; border:1px solid #d7d1c8; background:#fff; transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.merch-card:hover { transform:translateY(-3px); border-color:#c82028; box-shadow:0 16px 34px rgba(20,15,10,.09); }
+.merch-visual { position:relative; display:grid; min-height:0; aspect-ratio:4/5; overflow:hidden; place-items:center; background:#e8e5df; }
+.merch-product-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center 46%; transition:transform .45s ease; }
+.merch-card:hover .merch-product-image { transform:scale(1.025); }
+.merch-visual::after { content:""; position:absolute; inset:55% 0 0; pointer-events:none; background:linear-gradient(transparent,rgba(20,16,12,.08)); }
+.mockup-label { position:absolute; z-index:2; bottom:.8rem; left:.8rem; color:#2a2724; background:rgba(250,248,244,.88); padding:.4rem .55rem; font:700 .58rem/1 "Barlow Condensed",sans-serif; letter-spacing:.12em; }
+.merch-info { min-width:0; padding:1.15rem 1.2rem 1.25rem; }
+.merch-info h3 { margin-top:.4rem; font:800 clamp(1.25rem,2vw,1.65rem)/1.05 "Barlow Condensed",sans-serif; letter-spacing:-.015em; color:#171615; }
+.merch-info p { margin:.65rem 0 .9rem; color:#57534e; font-size:.84rem; line-height:1.55; }
+.merch-meta { display:flex; justify-content:space-between; align-items:baseline; gap:.75rem; padding:.55rem 0; border-top:1px solid #e7e5e4; font:700 .68rem/1.35 "Barlow Condensed",sans-serif; text-transform:uppercase; }
+.merch-meta span { color:#78716c; letter-spacing:.1em; }
+.merch-meta strong { color:#292524; text-align:right; }
+.merch-card-hoodie { grid-column:1/-1; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); align-items:stretch; }
+.merch-card-hoodie .merch-visual { aspect-ratio:1/1; }
+.merch-card-hoodie .merch-info { align-self:center; padding:clamp(1.1rem,3vw,2rem); }
+.merch-card-tee .merch-visual { aspect-ratio:4/5; }
+.merch-image-unavailable .merch-visual { background:#e8e5df; }
+@media (min-width:900px) {
+  #merch-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+  .merch-card-hoodie { grid-column:1/-1; }
+  .merch-card-tee { grid-template-columns:1fr; }
+}
+@media (max-width:640px) {
+  .merch-card-hoodie { grid-template-columns:1fr; }
+  .merch-card-hoodie .merch-visual { aspect-ratio:4/3; }
+  .merch-card-hoodie .merch-info { padding:1.1rem; }
+  .merch-info { padding:1rem; }
+}
+@media (prefers-reduced-motion:reduce) { .merch-card,.merch-product-image { transition:none; } }
