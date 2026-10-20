@@ -37,6 +37,14 @@ window.PANICO = {
       bio: "Felipe construye muros de riffs y abre grietas con solos que llevan la tensión más lejos. La guitarra marca el carácter, corta el aire y le da a cada canción su propia descarga."
     }
   ],
+  slideshow: [
+    { src: "assets/photos/slideshow/panico-01.webp", alt: "PÁNICO en vivo, batería y luces de escenario" },
+    { src: "assets/photos/slideshow/panico-02.webp", alt: "Guitarra de PÁNICO durante una presentación" },
+    { src: "assets/photos/slideshow/panico-03.webp", alt: "La banda PÁNICO tocando en sala de ensayo" },
+    { src: "assets/photos/slideshow/panico-04.webp", alt: "Vocalista de PÁNICO en una presentación en vivo" },
+    { src: "assets/photos/slideshow/panico-05.webp", alt: "Integrantes de PÁNICO compartiendo escenario" },
+    { src: "assets/photos/slideshow/panico-06.webp", alt: "Guitarrista de PÁNICO bajo luces rojas" }
+  ],
   media: [
     {
       title: "SANGRE",
