@@ -92,6 +92,41 @@
     merchGrid?.appendChild(card);
   });
 
+
+  const galleryImages = (PANICO.slideshow || []).filter(item => item && item.src);
+  const galleryImage = document.getElementById("gallery-image");
+  const galleryCaption = document.getElementById("gallery-caption");
+  const galleryCount = document.getElementById("gallery-count");
+  const galleryDots = document.getElementById("gallery-dots");
+  let galleryIndex = 0;
+  const showGalleryImage = index => {
+    if (!galleryImages.length || !galleryImage) return;
+    galleryIndex = (index + galleryImages.length) % galleryImages.length;
+    const item = galleryImages[galleryIndex];
+    galleryImage.classList.add("is-changing");
+    const nextImage = new Image();
+    nextImage.onload = () => {
+      galleryImage.src = item.src;
+      galleryImage.alt = item.alt || "Fotografía de PÁNICO";
+      galleryImage.classList.remove("is-changing");
+    };
+    nextImage.onerror = () => { galleryImage.classList.remove("is-changing"); galleryImage.alt = "Fotografía de PÁNICO no disponible"; };
+    nextImage.src = item.src;
+    if (galleryCaption) galleryCaption.textContent = item.caption || "PÁNICO · Bogotá, Colombia";
+    if (galleryCount) galleryCount.textContent = String(galleryIndex + 1).padStart(2,"0") + " / " + String(galleryImages.length).padStart(2,"0");
+    galleryDots?.querySelectorAll("button").forEach((button,i) => button.setAttribute("aria-current",String(i === galleryIndex)));
+  };
+  galleryImages.forEach((item,i) => {
+    const dot = document.createElement("button");
+    dot.type = "button"; dot.className = "gallery-dot";
+    dot.setAttribute("aria-label", "Ver fotografía " + (i+1));
+    dot.setAttribute("aria-current", String(i === 0));
+    dot.addEventListener("click", () => showGalleryImage(i));
+    galleryDots?.appendChild(dot);
+  });
+  document.getElementById("gallery-prev")?.addEventListener("click", () => showGalleryImage(galleryIndex - 1));
+  document.getElementById("gallery-next")?.addEventListener("click", () => showGalleryImage(galleryIndex + 1));
+
   const instagram = document.getElementById("instagram");
   if (instagram && PANICO.band.instagram) instagram.href = PANICO.band.instagram;
   document.querySelectorAll(".instagram-cta").forEach(link => {
