@@ -124,7 +124,7 @@ body { overflow-x: hidden; }
 .tee-neck { top:3%; left:40%; width:20%; height:9%; border:5px solid rgba(120,120,120,.42); border-top:0; border-radius:0 0 50% 50%; }
 .merch-visual-white .garment-shape { background:linear-gradient(100deg,#d5d5d5 0%,#fff 22%,#e8e8e8 45%,#fff 68%,#d0d0d0 100%); }
 .merch-visual-white .tee-neck { border-color:#c8c8c8; }
-.merch-mark-img { top:25%; left:39%; width:13%; max-width:42px; max-height:24px; transform:translate(-50%,-50%); }
+.merch-mark-img { top:25%; left:61%; width:13%; max-width:42px; max-height:24px; transform:translate(-50%,-50%); }
 .merch-card-hoodie .merch-mark-img { top:67%; left:50%; width:19%; max-width:70px; max-height:34px; }
 .merch-visual-white .merch-mark-img { filter:none; }
 .mockup-label { bottom:.75rem; left:.8rem; padding:.35rem .5rem; color:#57534e; background:rgba(255,255,255,.68); }
