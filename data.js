@@ -63,21 +63,21 @@ window.PANICO = {
   merch: [
     {
       name: "Hoodie PÁNICO",
-      description: "Hoodie negro con el logo pequeño en el frente, sobre el pecho.",
+      description: "Hoodie negro con logo pequeño integrado en el bolsillo delantero.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Negra",
-      description: "Camiseta negra con el logo pequeño al frente, sobre el pecho.",
+      description: "Camiseta negra con logo discreto en el pecho, a la altura del corazón.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Blanca",
-      description: "Camiseta blanca con el logo pequeño al frente, sobre el pecho.",
+      description: "Camiseta blanca con logo discreto en el pecho, a la altura del corazón.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-black-red.png"
