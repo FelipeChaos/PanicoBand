@@ -144,7 +144,16 @@
             <a class="mt-6 inline-flex items-center gap-2 border-b border-panic-red pb-2 font-condensed text-sm font-bold uppercase tracking-[.1em] text-panic-red transition hover:gap-4" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Ver novedades en Instagram <span aria-hidden="true">↗</span></a>
             <div><a class="button-primary mt-6" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Consultar merch <span aria-hidden="true">↗</span></a></div>
           </div>
-          <div id="merch-grid" class="grid gap-4"></div>
+          <div class="merch-carousel-wrap">
+            <div class="merch-carousel-toolbar">
+              <p class="merch-carousel-note">Colección PÁNICO <span id="merch-carousel-count">01 / 03</span></p>
+              <div class="merch-carousel-controls">
+                <button type="button" class="merch-carousel-button" id="merch-prev" aria-label="Merch anterior">←</button>
+                <button type="button" class="merch-carousel-button" id="merch-next" aria-label="Merch siguiente">→</button>
+              </div>
+            </div>
+            <div id="merch-grid" class="merch-carousel" aria-label="Colección de merch PÁNICO"></div>
+          </div>
         </div>
       </div>
     </section>
