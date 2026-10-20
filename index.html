@@ -10,60 +10,159 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { panic: { red: '#c82028', bright: '#e33238', ink: '#050505', paper: '#f2f0eb', muted: '#a6a19c' } },
+        fontFamily: { display: ['Archivo Black', 'sans-serif'], condensed: ['Barlow Condensed', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+        boxShadow: { red: '0 12px 36px rgba(200,32,40,.18)' }
+      }}
+    };
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="PÁNICO, inicio"><img src="assets/panico-logo.png" alt="PÁNICO"></a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">MENÚ ☰</button>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#banda">BANDA</a><a href="#media">MÚSICA</a><a href="#integrantes">INTEGRANTES</a><a href="#merch">MERCH</a><a href="#epk">EPK</a><a href="#contacto" class="nav-cta">BOOKING ↗</a><a href="https://www.instagram.com/panico.banda1/" class="nav-instagram" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-    </nav>
+<body class="bg-panic-ink font-body text-stone-100 antialiased selection:bg-panic-red selection:text-white">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-panic-ink/90 backdrop-blur-xl transition-all duration-300">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 md:px-8">
+      <a class="header-band group flex min-w-0 items-center gap-3" href="#inicio" aria-label="PÁNICO, inicio">
+        <img class="header-band-image h-12 w-16 rounded-sm object-cover object-center ring-1 ring-white/15 transition-all duration-300 md:h-14 md:w-20" src="assets/photos/panico-banda.jpg" alt="PÁNICO, banda completa" width="160" height="112">
+        <span class="hidden sm:block"><span class="block font-display text-sm tracking-[.16em] text-white">PÁNICO</span><span class="mt-1 block font-condensed text-[10px] uppercase tracking-[.22em] text-stone-400">Bogotá · Metal sin jaulas</span></span>
+      </a>
+      <button class="menu-toggle inline-flex min-h-11 items-center justify-center gap-2 rounded border border-white/20 px-4 font-condensed text-sm font-bold uppercase tracking-[.15em] text-white transition hover:border-panic-red hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-panic-bright md:hidden" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-navigation"><span class="menu-label">Menú</span><span aria-hidden="true">☰</span></button>
+      <nav id="primary-navigation" class="nav hidden absolute left-0 right-0 top-full border-b border-white/10 bg-panic-ink px-5 pb-5 pt-2 shadow-2xl md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Navegación principal">
+        <a class="nav-link" href="#banda">Banda</a><a class="nav-link" href="#media">Música</a><a class="nav-link" href="#integrantes">Integrantes</a><a class="nav-link" href="#merch">Merch</a><a class="nav-link" href="#epk">EPK</a>
+        <a class="nav-booking" href="#contacto">Booking <span aria-hidden="true">↗</span></a>
+        <a class="nav-link" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">BOGOTÁ / COLOMBIA · METAL</p>
-        <h1>METAL<br><span>SIN JAULAS.</span></h1>
-        <p class="hero-text">Riffs que golpean. Ritmos que retumban. Una banda que sigue creciendo y no pide permiso.</p>
-        <div class="hero-actions"><a class="btn btn-red" href="#media">ESCUCHA «SANGRE» ↓</a><a class="btn btn-line" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">SÍGUENOS EN INSTAGRAM ↗</a></div>
-      </div>
-      <div class="hero-logo"><img src="assets/panico-logo.png" alt="Logo oficial de PÁNICO"></div>
-      <div class="hero-stamp">BOGOTÁ · COLOMBIA<br>METAL SIN JAULAS</div>
-      <div class="scroll-cue">BAJA PARA ENTRAR EN EL RUIDO ↓</div>
-    </section>
-    <section class="ticker" aria-label="Lema de la banda"><div>PÁNICO — METAL SIN JAULAS — BOGOTÁ — PÁNICO — METAL SIN JAULAS — BOGOTÁ —</div></section>
-    <section id="banda" class="section manifesto">
-      <div class="section-kicker">01 / LA BANDA</div>
-      <div class="manifesto-layout">
-        <div><h2>NO NOS<br><span>ENCASILLAMOS.</span></h2></div>
-        <div class="manifesto-copy"><p class="lead" id="manifesto"></p><p id="bio"></p>
-          <div class="facts"><div><strong>01</strong><span>Origen<br>Bogotá</span></div><div><strong>02</strong><span>Actitud<br>Sin jaulas</span></div><div><strong>03</strong><span>Sonido<br>Metal abierto</span></div></div>
+
+  <main id="contenido">
+    <section id="inicio" class="hero relative isolate flex min-h-[760px] items-center overflow-hidden bg-panic-ink pb-20 pt-28 md:min-h-[790px] md:pb-24 md:pt-32">
+      <div class="hero-photo absolute inset-0 -z-20" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/85 to-black/35" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_45%,rgba(200,32,40,.24),transparent_42%)]" aria-hidden="true"></div>
+      <div class="mx-auto grid w-full max-w-7xl items-center gap-10 px-5 md:grid-cols-[1.1fr_.9fr] md:gap-8 md:px-8">
+        <div class="hero-copy max-w-2xl">
+          <p class="mb-5 flex items-center gap-3 font-condensed text-xs font-bold uppercase tracking-[.24em] text-stone-300"><span class="h-px w-8 bg-panic-red"></span>Bogotá / Colombia · Metal</p>
+          <h1 class="max-w-3xl font-condensed text-[clamp(4.1rem,10vw,8.8rem)] font-extrabold uppercase leading-[.79] tracking-[-.045em] text-white">Metal<br><span class="text-panic-red">sin jaulas.</span></h1>
+          <p class="mt-7 max-w-lg text-base leading-7 text-stone-300 md:text-lg">Riffs que golpean. Ritmos que retumban. Una banda que sigue creciendo y no pide permiso.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="button-primary" href="#media">Escucha «Sangre» <span aria-hidden="true">↓</span></a>
+            <a class="button-secondary" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Síguenos en Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="mt-10 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.2em] text-stone-500"><span class="h-px w-10 bg-panic-red"></span>Metal sin jaulas · Bogotá, Colombia</div>
+        </div>
+        <div class="hero-emblem relative mx-auto hidden w-full max-w-md items-center justify-center md:flex">
+          <div class="absolute aspect-square w-[90%] rounded-full border border-white/10"></div><div class="absolute aspect-square w-[72%] rounded-full border border-panic-red/30"></div>
+          <img class="relative z-10 max-h-[360px] w-[85%] object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,.75)]" src="assets/panico-logo.png" alt="Logo oficial de PÁNICO" width="560" height="300">
+          <span class="absolute bottom-0 right-0 font-condensed text-[10px] uppercase tracking-[.22em] text-stone-500">PÁNICO /  Bogotá</span>
         </div>
       </div>
-      <figure class="band-photo"><img id="group-photo" alt="Foto grupal de PÁNICO" loading="lazy"><figcaption>PÁNICO · BOGOTÁ, COLOMBIA</figcaption></figure>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-panic-red/70 to-transparent"></div>
     </section>
-    <section id="media" class="section media-section">
-      <div class="section-kicker">02 / SONIDO Y VISUAL</div>
-      <div class="section-head"><div><h2>SUBE EL<br><span>VOLUMEN.</span></h2></div><p>Una canción, un pulso y todo lo que tenemos para decir. Escucha «Sangre» y acompáñanos en el camino.</p></div>
-      <div id="media-grid" class="media-grid"></div>
+
+    <div class="overflow-hidden border-y border-white/10 bg-[#0b0b0b] py-3" aria-label="Lema de la banda"><div class="ticker-track flex w-max gap-8 font-condensed text-sm font-bold uppercase tracking-[.22em] text-stone-400"><span>PÁNICO <b class="text-panic-red">✳</b> Metal sin jaulas <b class="text-panic-red">✳</b> Bogotá</span><span aria-hidden="true">PÁNICO <b class="text-panic-red">✳</b> Metal sin jaulas <b class="text-panic-red">✳</b> Bogotá</span><span aria-hidden="true">PÁNICO <b class="text-panic-red">✳</b> Metal sin jaulas <b class="text-panic-red">✳</b> Bogotá</span></div></div>
+
+    <section id="banda" class="section-shell bg-[#0a0a0a]">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="section-label"><span>01</span> / La banda</div>
+        <div class="mt-8 grid gap-10 md:grid-cols-[.9fr_1.1fr] md:gap-20">
+          <h2 class="section-title">No nos<br><span>encasillamos.</span></h2>
+          <div class="max-w-2xl self-end">
+            <p id="manifesto" class="font-condensed text-2xl leading-tight text-stone-100 md:text-3xl"></p>
+            <p id="bio" class="mt-5 text-sm leading-7 text-stone-400 md:text-base"></p>
+            <div class="mt-8 grid grid-cols-3 border-y border-white/10 py-5">
+              <div class="pr-3"><strong class="font-condensed text-3xl text-panic-red">01</strong><span class="mt-1 block text-[10px] uppercase tracking-[.15em] text-stone-400">Origen<br>Bogotá</span></div>
+              <div class="border-l border-white/10 px-4"><strong class="font-condensed text-3xl text-panic-red">02</strong><span class="mt-1 block text-[10px] uppercase tracking-[.15em] text-stone-400">Actitud<br>Sin jaulas</span></div>
+              <div class="border-l border-white/10 pl-4"><strong class="font-condensed text-3xl text-panic-red">03</strong><span class="mt-1 block text-[10px] uppercase tracking-[.15em] text-stone-400">Sonido<br>Metal abierto</span></div>
+            </div>
+          </div>
+        </div>
+        <figure class="group relative mt-12 overflow-hidden bg-stone-900 md:mt-16">
+          <img id="group-photo" class="max-h-[620px] w-full object-cover object-center transition duration-700 group-hover:scale-[1.015]" alt="Foto grupal de PÁNICO" loading="lazy" width="1600" height="900">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <figcaption class="absolute bottom-0 left-0 flex w-full items-center justify-between gap-4 p-5 font-condensed text-xs font-bold uppercase tracking-[.16em] text-white md:p-7"><span>PÁNICO · Bogotá, Colombia</span><span class="text-panic-red">Metal sin jaulas</span></figcaption>
+        </figure>
+      </div>
     </section>
-    <section id="integrantes" class="section members-section">
-      <div class="section-kicker">03 / QUIÉNES HACEN EL RUIDO</div>
-      <div class="section-head members-head"><h2>CUERPO,<br><span>CUERDAS Y GOLPE.</span></h2><p>Cada elemento tiene su fuerza. Juntos construyen el sonido de PÁNICO.</p></div>
-      <div id="members-grid" class="members-grid"></div>
-      <p class="roster-note">La formación continúa evolucionando. Compartiremos nuevas incorporaciones cuando estén confirmadas.</p>
+
+    <section id="media" class="section-shell border-t border-white/5 bg-panic-ink">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="section-label"><span>02</span> / Sonido y visual</div>
+        <div class="mt-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <h2 class="section-title">Sube el<br><span>volumen.</span></h2>
+          <p class="max-w-md pb-1 text-sm leading-7 text-stone-400 md:text-base">Una canción, un pulso y todo lo que tenemos para decir. Escucha «Sangre» y acompáñanos en el camino.</p>
+        </div>
+        <div id="media-grid" class="mt-10 grid gap-5 md:grid-cols-2"></div>
+      </div>
     </section>
-    <section id="merch" class="section merch-section">
-      <div class="section-kicker">04 / MERCH OFICIAL</div>
-      <div class="merch-layout"><div><h2>VISTE<br><span>EL RUIDO.</span></h2><p>Diseños sobrios, actitud pesada. Hoodies y camisetas con el logo de PÁNICO en pequeño, al frente y sobre el pecho.</p><p class="merch-note">Estamos cotizando para ofrecer un precio competitivo sin sacrificar la calidad. Tallas previstas: S, M, L y XL. Consulta novedades y disponibilidad en Instagram.</p><a class="instagram-inline" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">VER NOVEDADES EN INSTAGRAM ↗</a><a class="btn btn-red" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">CONSULTAR MERCH ↗</a></div><div id="merch-grid" class="merch-grid"></div></div>
+
+    <section id="integrantes" class="section-shell border-t border-white/5 bg-[#0a0a0a]">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="section-label"><span>03</span> / Quiénes hacen el ruido</div>
+        <div class="mt-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <h2 class="section-title">Cuerpo,<br><span>cuerdas y golpe.</span></h2>
+          <p class="max-w-sm pb-1 text-sm leading-7 text-stone-400 md:text-base">Cada elemento tiene su fuerza. Juntos construyen el sonido de PÁNICO.</p>
+        </div>
+        <div id="members-grid" class="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4"></div>
+        <p class="mt-6 border-l-2 border-panic-red pl-4 text-xs leading-6 text-stone-500">La formación continúa evolucionando. Compartiremos nuevas incorporaciones cuando estén confirmadas.</p>
+      </div>
     </section>
-    <section id="epk" class="section epk-section"><div class="epk-card"><div><div class="section-kicker">05 / PRESS KIT</div><h2>TODO LO QUE<br><span>NECESITAS.</span></h2><p>Información de la banda y material para programación, prensa, festivales y escenarios independientes.</p></div><div class="epk-actions"><a class="btn btn-red" href="epk.html">VER EPK DIGITAL ↗</a><a class="btn btn-line" href="EPK-PANICO.pdf" target="_blank" rel="noopener">ABRIR PDF ↗</a></div></div></section>
-    <section id="contacto" class="section contact-section"><div class="section-kicker">06 / BOOKING Y CONTACTO</div><div class="contact-layout"><div><h2>¿HACEMOS<br><span>RUIDO?</span></h2><p>Para eventos, festivales, bares, escenarios independientes, prensa y colaboraciones.</p></div><div class="contact-box"><div class="contact-line"><span>INSTAGRAM</span><a id="instagram" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">PÁNICO.BANDA1 ↗</a></div><div class="contact-line"><span>EMAIL</span><a id="email" href="mailto:panicobandcol@gmail.com">panicobandcol@gmail.com ↗</a></div><div class="contact-line"><span>WHATSAPP · DANIELA</span><a id="whatsapp" href="https://wa.me/573229487250" target="_blank" rel="noopener">CONTACTAR BOOKING ↗</a></div></div></div></section>
+
+    <section id="merch" class="section-shell bg-panic-paper text-stone-900">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="section-label section-label-light"><span>04</span> / Merch oficial</div>
+        <div class="mt-8 grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
+          <div class="max-w-lg">
+            <h2 class="section-title section-title-light">Viste<br><span>el ruido.</span></h2>
+            <p class="mt-6 text-sm leading-7 text-stone-600 md:text-base">Diseños sobrios, actitud pesada. Hoodies y camisetas con el logo de PÁNICO en pequeño, al frente y sobre el pecho.</p>
+            <p class="mt-4 border-l-2 border-panic-red pl-4 text-sm leading-6 text-stone-600">Estamos cotizando para ofrecer un precio competitivo sin sacrificar la calidad. Tallas previstas: S, M, L y XL. Consulta novedades y disponibilidad en Instagram.</p>
+            <a class="mt-6 inline-flex items-center gap-2 border-b border-panic-red pb-2 font-condensed text-sm font-bold uppercase tracking-[.1em] text-panic-red transition hover:gap-4" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Ver novedades en Instagram <span aria-hidden="true">↗</span></a>
+            <div><a class="button-primary mt-6" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Consultar merch <span aria-hidden="true">↗</span></a></div>
+          </div>
+          <div id="merch-grid" class="grid gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="epk" class="section-shell bg-panic-ink">
+      <div class="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+        <div class="epk-card relative overflow-hidden border border-white/10 bg-[#101010] p-7 md:p-12">
+          <div class="pointer-events-none absolute -right-12 -top-16 h-64 w-64 rounded-full border border-panic-red/20"></div><div class="pointer-events-none absolute -right-2 -top-6 h-44 w-44 rounded-full border border-white/10"></div>
+          <div class="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <div><div class="section-label"><span>05</span> / Press kit</div><h2 class="mt-6 font-condensed text-4xl font-extrabold uppercase leading-[.92] tracking-tight md:text-6xl">Todo lo que<br><span class="text-panic-red">necesitas.</span></h2><p class="mt-5 max-w-xl text-sm leading-7 text-stone-400 md:text-base">Información de la banda y material para programación, prensa, festivales y escenarios independientes.</p></div>
+            <div class="flex flex-col gap-3 sm:flex-row md:flex-col"><a class="button-primary" href="epk.html">Ver EPK digital <span aria-hidden="true">↗</span></a><a class="button-secondary" href="EPK-PANICO.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section-shell border-t border-white/5 bg-[#0a0a0a]">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="section-label"><span>06</span> / Booking y contacto</div>
+        <div class="mt-8 grid gap-10 md:grid-cols-[.9fr_1.1fr] md:gap-20">
+          <div><h2 class="section-title">¿Hacemos<br><span>ruido?</span></h2><p class="mt-6 max-w-md text-sm leading-7 text-stone-400 md:text-base">Para eventos, festivales, bares, escenarios independientes, prensa y colaboraciones.</p></div>
+          <div class="contact-box divide-y divide-white/10 border-y border-white/10">
+            <div class="contact-line"><span>Instagram</span><a id="instagram" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">PÁNICO.BANDA1 ↗</a></div>
+            <div class="contact-line"><span>Email</span><a id="email" href="mailto:panicobandcol@gmail.com">panicobandcol@gmail.com ↗</a></div>
+            <div class="contact-line"><span>WhatsApp · Daniela</span><a id="whatsapp" href="https://wa.me/573229487250" target="_blank" rel="noopener noreferrer">Contactar booking ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><img src="assets/panico-logo.png" alt="PÁNICO"><span>© <span id="year"></span> PÁNICO · BOGOTÁ, COLOMBIA</span><a href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">INSTAGRAM ↗</a><a href="#inicio">VOLVER ARRIBA ↑</a></footer>
-  <script src="data.js"></script><script src="script.js"></script>
+
+  <footer class="border-t border-white/10 bg-black">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
+      <a href="#inicio" aria-label="PÁNICO, volver al inicio"><img class="w-24 opacity-90" src="assets/panico-logo.png" alt="PÁNICO" width="160" height="80"></a>
+      <span class="text-[10px] uppercase tracking-[.13em] text-stone-500">© <span id="year"></span> PÁNICO · Bogotá, Colombia</span>
+      <div class="flex flex-wrap gap-5 font-condensed text-xs font-bold uppercase tracking-[.12em] text-stone-400"><a class="transition hover:text-white" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a class="transition hover:text-white" href="#inicio">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
