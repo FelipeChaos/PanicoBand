@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050505">
-  <meta name="description" content="PÁNICO — banda de metal bogotana. Metal sin jaulas.">
+  <meta name="description" content="PÁNICO — banda de metal de Bogotá, Colombia. Metal sin jaulas.">
   <title>PÁNICO — Metal sin jaulas</title>
   <link rel="icon" href="assets/panico-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,131 +13,57 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise"></div>
-
+  <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="PÁNICO">
-      <img src="assets/panico-logo.png" alt="PÁNICO">
-    </a>
-    <button class="menu-toggle" aria-label="Abrir menú">MENU</button>
-    <nav class="nav">
-      <a href="#banda">BANDA</a>
-      <a href="#media">MEDIA</a>
-      <a href="#integrantes">INTEGRANTES</a>
-      <a href="#merch">MERCH</a>
-      <a href="#epk">EPK</a>
-      <a href="#contacto" class="nav-cta">BOOKING</a>
+    <a class="brand" href="#inicio" aria-label="PÁNICO, inicio"><img src="assets/panico-logo.png" alt="PÁNICO"></a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">MENÚ ☰</button>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#banda">BANDA</a><a href="#media">MÚSICA</a><a href="#integrantes">INTEGRANTES</a><a href="#merch">MERCH</a><a href="#epk">EPK</a><a href="#contacto" class="nav-cta">BOOKING ↗</a>
     </nav>
   </header>
-
   <main id="inicio">
     <section class="hero">
-      <div class="hero-grid"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="eyebrow">BOGOTÁ / COLOMBIA · METAL</p>
-        <h1>NO<br><span>JAULAS.</span></h1>
-        <p class="hero-text">Riffs pesados. Batería contundente. Cuatro músicos y muchas cosas que decir.</p>
-        <div class="hero-actions">
-          <a class="btn btn-red" href="#media">VER MEDIA</a>
-          <a class="btn btn-line" href="#epk">ABRIR EPK</a>
-        </div>
+        <h1>METAL<br><span>SIN JAULAS.</span></h1>
+        <p class="hero-text">Riffs que golpean. Ritmos que retumban. Una banda que sigue creciendo y no pide permiso.</p>
+        <div class="hero-actions"><a class="btn btn-red" href="#media">ESCUCHA «SANGRE» ↓</a><a class="btn btn-line" href="#contacto">BOOKING ↗</a></div>
       </div>
-      <div class="hero-logo">
-        <img src="assets/panico-logo.png" alt="Logo PÁNICO">
-      </div>
-      <div class="scroll-cue">SCROLL ↓</div>
+      <div class="hero-logo"><img src="assets/panico-logo.png" alt="Logo de PÁNICO"></div>
+      <div class="hero-stamp">BOGOTÁ · COLOMBIA<br>METAL SIN JAULAS</div>
+      <div class="scroll-cue">BAJA PARA ENTRAR EN EL RUIDO ↓</div>
     </section>
-
-    <section class="ticker" aria-label="PÁNICO">
-      <div>PÁNICO — METAL SIN JAULAS — BOGOTÁ — PÁNICO — METAL SIN JAULAS — BOGOTÁ —</div>
-    </section>
-
+    <section class="ticker" aria-label="Lema de la banda"><div>PÁNICO — METAL SIN JAULAS — BOGOTÁ — PÁNICO — METAL SIN JAULAS — BOGOTÁ —</div></section>
     <section id="banda" class="section manifesto">
       <div class="section-kicker">01 / LA BANDA</div>
       <div class="manifesto-layout">
-        <div>
-          <h2>NO NOS<br><span>ENCASILLAMOS.</span></h2>
-        </div>
-        <div class="manifesto-copy">
-          <p class="lead" id="manifesto"></p>
-          <p id="bio"></p>
-          <div class="facts">
-            <div><strong>01</strong><span>Ciudad<br>Bogotá</span></div>
-            <div><strong>02</strong><span>Formación<br>4 músicos</span></div>
-            <div><strong>03</strong><span>Sonido<br>Metal abierto</span></div>
-          </div>
+        <div><h2>NO NOS<br><span>ENCASILLAMOS.</span></h2></div>
+        <div class="manifesto-copy"><p class="lead" id="manifesto"></p><p id="bio"></p>
+          <div class="facts"><div><strong>01</strong><span>Origen<br>Bogotá</span></div><div><strong>02</strong><span>Actitud<br>Sin jaulas</span></div><div><strong>03</strong><span>Sonido<br>Metal abierto</span></div></div>
         </div>
       </div>
+      <figure class="band-photo"><img id="group-photo" alt="Foto grupal de PÁNICO" loading="lazy"><figcaption>PÁNICO · BOGOTÁ, COLOMBIA</figcaption></figure>
     </section>
-
     <section id="media" class="section media-section">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">02 / MEDIA</div>
-          <h2>RUIDO<br><span>EN PROCESO.</span></h2>
-        </div>
-        <p>Por ahora estamos construyendo nuestro catálogo. Aquí vivirán ensayos, sesiones, presentaciones y música.</p>
-      </div>
+      <div class="section-kicker">02 / SONIDO Y VISUAL</div>
+      <div class="section-head"><div><h2>SUBE EL<br><span>VOLUMEN.</span></h2></div><p>Una canción, un pulso y todo lo que tenemos para decir. Escucha «Sangre» y acompáñanos en el camino.</p></div>
       <div id="media-grid" class="media-grid"></div>
     </section>
-
     <section id="integrantes" class="section members-section">
-      <div class="section-kicker">03 / LOS CUATRO</div>
-      <div class="section-head members-head">
-        <h2>CUATRO<br><span>VOCES.</span></h2>
-        <p>No somos una lista de instrumentos. Somos cuatro historias que se encuentran en el mismo ruido.</p>
-      </div>
+      <div class="section-kicker">03 / QUIÉNES HACEN EL RUIDO</div>
+      <div class="section-head members-head"><h2>CUERPO,<br><span>CUERDAS Y GOLPE.</span></h2><p>Cada elemento tiene su fuerza. Juntos construyen el sonido de PÁNICO.</p></div>
       <div id="members-grid" class="members-grid"></div>
+      <p class="roster-note">La formación continúa evolucionando. Compartiremos nuevas incorporaciones cuando estén confirmadas.</p>
     </section>
-
     <section id="merch" class="section merch-section">
-      <div class="section-kicker">04 / MERCH</div>
-      <div class="merch-layout">
-        <div>
-          <h2>VISTE<br><span>EL RUIDO.</span></h2>
-          <p>La camiseta oficial de PÁNICO está en construcción. Aquí podrás ver modelos, tallas, precios y cómo pedir.</p>
-        </div>
-        <div id="merch-grid" class="merch-grid"></div>
-      </div>
+      <div class="section-kicker">04 / MERCH OFICIAL</div>
+      <div class="merch-layout"><div><h2>VISTE<br><span>EL RUIDO.</span></h2><p>Diseños sobrios, actitud pesada. Hoodies y camisetas con el logo de PÁNICO en pequeño, al frente y sobre el pecho.</p><p class="merch-note">Los precios y las tallas se publicarán cuando estén confirmados. Por ahora, consulta disponibilidad por Instagram.</p><a class="btn btn-red" href="https://www.instagram.com/panico.banda1/" target="_blank" rel="noopener">CONSULTAR MERCH ↗</a></div><div id="merch-grid" class="merch-grid"></div></div>
     </section>
-
-    <section id="epk" class="section epk-section">
-      <div class="epk-card">
-        <div>
-          <div class="section-kicker">05 / PRESS KIT</div>
-          <h2>TODO LO QUE<br><span>NECESITAS.</span></h2>
-          <p>El EPK concentra nuestra historia, propuesta, integrantes, material visual y datos de booking en un solo lugar.</p>
-        </div>
-        <div class="epk-actions">
-          <a class="btn btn-red" href="epk.html">VER EPK DIGITAL</a>
-          <a class="btn btn-line" href="EPK-PANICO.pdf" target="_blank" rel="noopener">ABRIR PDF</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="section contact-section">
-      <div class="section-kicker">06 / BOOKING</div>
-      <div class="contact-layout">
-        <div>
-          <h2>¿HACEMOS<br><span>RUIDO?</span></h2>
-          <p>Para eventos, festivales, bares, escenarios independientes, prensa o colaboraciones.</p>
-        </div>
-        <div class="contact-box">
-          <div class="contact-line"><span>INSTAGRAM</span><a id="instagram" target="_blank" rel="noopener">PÁNICO.BANDA1 ↗</a></div>
-          <div class="contact-line"><span>EMAIL</span><a id="email">Agregar correo</a></div>
-          <div class="contact-line"><span>WHATSAPP</span><a id="whatsapp">Agregar contacto</a></div>
-        </div>
-      </div>
-    </section>
+    <section id="epk" class="section epk-section"><div class="epk-card"><div><div class="section-kicker">05 / PRESS KIT</div><h2>TODO LO QUE<br><span>NECESITAS.</span></h2><p>Información de la banda y material para programación, prensa, festivales y escenarios independientes.</p></div><div class="epk-actions"><a class="btn btn-red" href="epk.html">VER EPK DIGITAL ↗</a><a class="btn btn-line" href="EPK-PANICO.pdf" target="_blank" rel="noopener">ABRIR PDF ↗</a></div></div></section>
+    <section id="contacto" class="section contact-section"><div class="section-kicker">06 / BOOKING Y CONTACTO</div><div class="contact-layout"><div><h2>¿HACEMOS<br><span>RUIDO?</span></h2><p>Para eventos, festivales, bares, escenarios independientes, prensa y colaboraciones.</p></div><div class="contact-box"><div class="contact-line"><span>INSTAGRAM</span><a id="instagram" target="_blank" rel="noopener">PÁNICO.BANDA1 ↗</a></div><div class="contact-line"><span>EMAIL</span><a id="email">Correo por confirmar</a></div><div class="contact-line"><span>WHATSAPP</span><a id="whatsapp">Contacto por confirmar</a></div></div></div></section>
   </main>
-
-  <footer>
-    <img src="assets/panico-logo.png" alt="PÁNICO">
-    <span>© <span id="year"></span> PÁNICO · BOGOTÁ, COLOMBIA</span>
-    <a href="#inicio">VOLVER ARRIBA ↑</a>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <footer><img src="assets/panico-logo.png" alt="PÁNICO"><span>© <span id="year"></span> PÁNICO · BOGOTÁ, COLOMBIA</span><a href="#inicio">VOLVER ARRIBA ↑</a></footer>
+  <script src="data.js"></script><script src="script.js"></script>
 </body>
 </html>
