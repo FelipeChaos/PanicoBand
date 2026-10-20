@@ -90,6 +90,31 @@
     merchGrid?.appendChild(card);
   });
 
+  const merchCarousel = document.getElementById("merch-grid");
+  const merchCount = document.getElementById("merch-carousel-count");
+  const merchPrev = document.getElementById("merch-prev");
+  const merchNext = document.getElementById("merch-next");
+  const updateMerchCarousel = () => {
+    if (!merchCarousel) return;
+    const cards = [...merchCarousel.querySelectorAll(".merch-card")];
+    if (!cards.length) return;
+    const activeIndex = Math.max(0, cards.findIndex(card => card.offsetLeft >= merchCarousel.scrollLeft + merchCarousel.offsetLeft - 8));
+    const visibleCount = Math.max(1, Math.round(merchCarousel.clientWidth / (cards[0].getBoundingClientRect().width + 16)));
+    if (merchCount) merchCount.textContent = String(Math.min(activeIndex + 1, cards.length)).padStart(2,"0") + " / " + String(cards.length).padStart(2,"0");
+    if (merchPrev) merchPrev.disabled = merchCarousel.scrollLeft <= 4;
+    if (merchNext) merchNext.disabled = merchCarousel.scrollLeft + merchCarousel.clientWidth >= merchCarousel.scrollWidth - 4;
+  };
+  const scrollMerch = direction => {
+    const card = merchCarousel?.querySelector(".merch-card");
+    if (!merchCarousel || !card) return;
+    merchCarousel.scrollBy({ left: direction * (card.getBoundingClientRect().width + 16), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
+  merchPrev?.addEventListener("click", () => scrollMerch(-1));
+  merchNext?.addEventListener("click", () => scrollMerch(1));
+  merchCarousel?.addEventListener("scroll", updateMerchCarousel, { passive:true });
+  window.addEventListener("resize", updateMerchCarousel);
+  requestAnimationFrame(updateMerchCarousel);
+
   const galleryImages = (PANICO.slideshow || []).filter(item => item && item.src);
   const galleryImage = document.getElementById("gallery-image");
   const galleryCaption = document.getElementById("gallery-caption");
