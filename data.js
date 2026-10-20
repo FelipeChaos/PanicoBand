@@ -37,6 +37,14 @@ window.PANICO = {
       bio: "Felipe construye muros de riffs y abre grietas con solos que llevan la tensión más lejos. La guitarra marca el carácter, corta el aire y le da a cada canción su propia descarga."
     }
   ],
+  slideshow: [
+    { src: "assets/photos/panico-01.webp", alt: "Batería de PÁNICO tocando en vivo", caption: "El pulso · PÁNICO en vivo" },
+    { src: "assets/photos/panico-02.webp", alt: "Integrantes de PÁNICO en ensayo", caption: "El ruido se construye en conjunto" },
+    { src: "assets/photos/panico-03.webp", alt: "Vocalista de PÁNICO cantando al micrófono", caption: "Voz al frente · Sin jaulas" },
+    { src: "assets/photos/panico-04.webp", alt: "Bajista de PÁNICO durante una presentación", caption: "Graves que sostienen el golpe" },
+    { src: "assets/photos/panico-05.webp", alt: "Guitarrista de PÁNICO en el escenario", caption: "Cuerdas, tensión y descarga" },
+    { src: "assets/photos/panico-06.webp", alt: "Integrantes de PÁNICO en una presentación", caption: "PÁNICO · Bogotá, Colombia" }
+  ],
   media: [
     {
       title: "SANGRE",
@@ -55,21 +63,21 @@ window.PANICO = {
   merch: [
     {
       name: "Hoodie PÁNICO",
-      description: "Hoodie negro con el logo pequeño en el frente, sobre el pecho.",
+      description: "Hoodie negro con logo pequeño integrado en el bolsillo delantero.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Negra",
-      description: "Camiseta negra con el logo pequeño al frente, sobre el pecho.",
+      description: "Camiseta negra con logo discreto en el pecho, a la altura del corazón.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-red-white.png"
     },
     {
       name: "Camiseta PÁNICO · Blanca",
-      description: "Camiseta blanca con el logo pequeño al frente, sobre el pecho.",
+      description: "Camiseta blanca con logo discreto en el pecho, a la altura del corazón.",
       price: "Precio por confirmar",
       sizes: "S · M · L · XL",
       logo: "assets/logo-original-black-red.png"

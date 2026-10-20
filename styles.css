@@ -110,3 +110,39 @@ body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+/* Merch: mockups de prenda con volumen, costuras y ubicación realista del logo. */
+.merch-card { grid-template-columns: minmax(0,1fr); padding: 0; overflow: hidden; }
+.merch-visual { min-height: 22rem; isolation: isolate; background: radial-gradient(ellipse at 50% 36%,#fff 0%,#f1eee8 46%,#ded9d0 100%); }
+.garment-shadow { top: 15%; width: 57%; height: 76%; border-radius: 48%; background: rgba(0,0,0,.2); filter: blur(20px); }
+.garment-shape { width: 64%; height: 82%; background: linear-gradient(100deg,#090909 0%,#252525 18%,#080808 39%,#171717 67%,#030303 100%); clip-path: polygon(27% 0,38% 5%,62% 5%,73% 0,100% 17%,84% 39%,74% 31%,74% 100%,26% 100%,26% 31%,16% 39%,0 17%); filter: drop-shadow(0 18px 16px rgba(0,0,0,.25)); }
+.garment-shape::after { content:""; position:absolute; inset:3% 5%; border-left:1px solid rgba(255,255,255,.08); border-right:1px solid rgba(255,255,255,.06); pointer-events:none; }
+.merch-visual-hoodie .garment-shape { width:68%; height:85%; clip-path:polygon(22% 10%,31% 0,42% 5%,58% 5%,69% 0,78% 10%,100% 22%,84% 43%,76% 35%,76% 100%,24% 100%,24% 35%,16% 43%,0 22%); }
+.hood-shape { position:absolute; top:-1%; left:35%; width:30%; height:17%; border:7px solid #292929; border-bottom:0; border-radius:48% 48% 15% 15%; background:linear-gradient(120deg,#050505,#242424); box-shadow:inset 0 0 0 2px rgba(255,255,255,.06); }
+.hoodie-pocket { left:31%; bottom:12%; width:38%; height:17%; border:1px solid rgba(255,255,255,.22); border-top:2px solid rgba(255,255,255,.1); border-radius:2px 2px 14px 14px; background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(0,0,0,.1)); box-shadow:inset 0 3px 6px rgba(0,0,0,.2); }
+.tee-neck { top:3%; left:40%; width:20%; height:9%; border:5px solid rgba(120,120,120,.42); border-top:0; border-radius:0 0 50% 50%; }
+.merch-visual-white .garment-shape { background:linear-gradient(100deg,#d5d5d5 0%,#fff 22%,#e8e8e8 45%,#fff 68%,#d0d0d0 100%); }
+.merch-visual-white .tee-neck { border-color:#c8c8c8; }
+.merch-mark-img { top:25%; left:61%; width:13%; max-width:42px; max-height:24px; transform:translate(-50%,-50%); }
+.merch-card-hoodie .merch-mark-img { top:67%; left:50%; width:19%; max-width:70px; max-height:34px; }
+.merch-visual-white .merch-mark-img { filter:none; }
+.mockup-label { bottom:.75rem; left:.8rem; padding:.35rem .5rem; color:#57534e; background:rgba(255,255,255,.68); }
+.merch-info { padding:1.2rem 1.25rem 1.35rem; }
+@media (min-width:768px) { .merch-card { grid-template-columns:1fr; } .merch-visual { min-height:25rem; } }
+@media (max-width:640px) { .merch-visual { min-height:19rem; } }
+
+/* Galería accesible: una imagen protagonista y controles táctiles. */
+.gallery-stage { position:relative; overflow:hidden; background:#111; aspect-ratio:16/9; max-height: min(68vw, 720px); }
+.gallery-stage img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:opacity .28s ease, transform .6s ease; }
+.gallery-stage img.is-changing { opacity:.25; transform:scale(1.015); }
+.gallery-shade { position:absolute; inset:35% 0 0; background:linear-gradient(transparent,rgba(0,0,0,.72)); pointer-events:none; }
+.gallery-caption { position:absolute; bottom:1.2rem; left:1.2rem; right:1.2rem; color:#fff; font:700 clamp(.8rem,1.6vw,1rem)/1.3 'Barlow Condensed',sans-serif; letter-spacing:.14em; text-transform:uppercase; }
+.gallery-controls { display:flex; align-items:center; gap:.85rem; }
+.gallery-control { display:grid; place-items:center; width:2.8rem; height:2.8rem; border:1px solid rgba(255,255,255,.25); color:#fff; font-size:1.3rem; transition:background .2s,border-color .2s; }
+.gallery-control:hover,.gallery-control:focus-visible { background:#c82028; border-color:#c82028; }
+.gallery-count { color:#a8a29e; font:700 .72rem/1 'Barlow Condensed',sans-serif; letter-spacing:.12em; font-variant-numeric:tabular-nums; }
+.gallery-dots { display:flex; justify-content:center; gap:.45rem; padding-top:1rem; }
+.gallery-dot { width:1.5rem; height:3px; background:#57534e; border:0; padding:0; cursor:pointer; }
+.gallery-dot[aria-current="true"] { background:#c82028; }
+@media (prefers-reduced-motion:reduce) { .gallery-stage img,.gallery-control { transition:none; } }
