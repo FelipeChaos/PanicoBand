@@ -38,12 +38,12 @@ window.PANICO = {
     }
   ],
   slideshow: [
-    { src: "assets/photos/slideshow/panico-01.webp", alt: "PÁNICO en vivo, batería y luces de escenario" },
-    { src: "assets/photos/slideshow/panico-02.webp", alt: "Guitarra de PÁNICO durante una presentación" },
-    { src: "assets/photos/slideshow/panico-03.webp", alt: "La banda PÁNICO tocando en sala de ensayo" },
-    { src: "assets/photos/slideshow/panico-04.webp", alt: "Vocalista de PÁNICO en una presentación en vivo" },
-    { src: "assets/photos/slideshow/panico-05.webp", alt: "Integrantes de PÁNICO compartiendo escenario" },
-    { src: "assets/photos/slideshow/panico-06.webp", alt: "Guitarrista de PÁNICO bajo luces rojas" }
+    { src: "assets/photos/slideshow/panico-01.webp", alt: "Batería de PÁNICO tocando en vivo", caption: "El pulso · PÁNICO en vivo" },
+    { src: "assets/photos/slideshow/panico-02.webp", alt: "Integrantes de PÁNICO en ensayo", caption: "El ruido se construye en conjunto" },
+    { src: "assets/photos/slideshow/panico-03.webp", alt: "Vocalista de PÁNICO cantando al micrófono", caption: "Voz al frente · Sin jaulas" },
+    { src: "assets/photos/slideshow/panico-04.webp", alt: "Bajista de PÁNICO durante una presentación", caption: "Graves que sostienen el golpe" },
+    { src: "assets/photos/slideshow/panico-05.webp", alt: "Guitarrista de PÁNICO en el escenario", caption: "Cuerdas, tensión y descarga" },
+    { src: "assets/photos/slideshow/panico-06.webp", alt: "Integrantes de PÁNICO en una presentación", caption: "PÁNICO · Bogotá, Colombia" }
   ],
   media: [
     {
