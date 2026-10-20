@@ -72,7 +72,7 @@
     card.className = `merch-card merch-card-${garment} merch-card-${color}`;
     card.innerHTML = `
       <div class="merch-visual merch-visual-${garment} merch-visual-${color}">
-        <img class="merch-product-image" src="${escapeHTML(item.image || "")}" alt="${escapeHTML(item.name + " — mockup de referencia con logo PÁNICO")}" loading="lazy" width="1122" height="1402">
+        <img class="merch-product-image" src="${escapeHTML(item.image || "")}" alt="${escapeHTML(item.name + " — mockup de referencia")}" loading="lazy" width="1122" height="1402"><img class="merch-logo-overlay merch-logo-${garment} merch-logo-${color}" src="${escapeHTML(item.logo || (color === "white" ? "assets/logo-original-black-red.png" : "assets/logo-original-red-white.png"))}" alt="" aria-hidden="true" loading="lazy">
         <span class="mockup-label">MOCKUP DE REFERENCIA</span>
       </div>
       <div class="merch-info">
