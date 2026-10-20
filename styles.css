@@ -55,3 +55,103 @@ h2{font:900 clamp(55px,8vw,120px)/.82 "Archivo Black";letter-spacing:-.065em;mar
 footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px 7vw;color:#777;font:700 11px "Barlow Condensed";letter-spacing:.1em}footer img{width:110px;max-height:45px;object-fit:contain}footer a:hover{color:#fff}
 @media(max-width:900px){.nav{display:none}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:150px}.hero-logo{position:absolute;right:-10%;bottom:10%;opacity:.22}.hero-logo img{width:75vw}.manifesto-layout,.merch-layout,.contact-layout{grid-template-columns:1fr;gap:45px}.media-grid{grid-template-columns:1fr 1fr}.members-grid{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head>p{margin-top:25px}.epk-card{display:block}.epk-actions{margin-top:30px}}
 @media(max-width:560px){.site-header{padding:0 20px}.brand img{width:120px}.hero{padding-left:25px;padding-right:25px}.section{padding:80px 25px}.media-grid,.members-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid #333;padding-bottom:14px}.epk-card{padding:30px}.contact-line{display:block}.contact-line a{display:block;margin-top:6px}footer{padding:25px;display:grid}}
+
+
+/* PÁNICO refresh — editorial metal aesthetic */
+:root{--red:#e21d1d;--red2:#ff382c;--black:#050505;--white:#f4f1ec;--gray:#a4a4a4;--line:#282828}
+body{overflow-x:hidden}
+.site-header{background:rgba(5,5,5,.9);border-bottom-color:rgba(226,29,29,.22)}
+.nav a{transition:color .2s,opacity .2s}.nav a:hover{color:var(--red)}
+.hero{min-height:94svh;grid-template-columns:1.05fr .95fr;padding-top:145px;background:radial-gradient(ellipse at 76% 50%,rgba(226,29,29,.2),transparent 40%),linear-gradient(115deg,#050505 30%,#0c0909)}
+.hero-copy{max-width:700px}
+.hero h1{font-size:clamp(64px,10.4vw,154px);line-height:.83;letter-spacing:-.075em}
+.hero h1 span{display:inline-block;margin-top:8px}
+.hero-text{max-width:530px;color:#c4c0bc}
+.hero-logo img{width:min(43vw,610px);max-height:55vh;object-fit:contain}
+.hero-stamp{position:absolute;right:7vw;bottom:38px;color:#6c6662;font:700 11px/1.6 "Barlow Condensed";letter-spacing:.18em;text-align:right}
+.section{scroll-margin-top:80px}
+.manifesto-layout{align-items:start}
+.band-photo{margin:70px 0 0;position:relative;border:1px solid #333;background:#101010;max-height:650px;overflow:hidden}
+.band-photo img{display:block;width:100%;max-height:650px;object-fit:cover;object-position:center 38%;filter:saturate(.72) contrast(1.05)}
+.band-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(transparent,rgba(0,0,0,.9));font:700 11px "Barlow Condensed";letter-spacing:.18em;color:#eee}
+.band-photo.image-unavailable{min-height:240px}
+.media-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.media-card{padding:0;min-height:0;display:flex;flex-direction:column;background:#090909}
+.media-visual{position:relative;aspect-ratio:16/9;background:radial-gradient(circle at 70% 30%,rgba(226,29,29,.25),transparent 45%),#0d0d0d;overflow:hidden;border-bottom:1px solid #282828}
+.video-visual iframe{display:block;width:100%;height:100%;border:0;background:#050505}
+.photo-visual{display:grid;place-items:center;background:linear-gradient(135deg,#140b0b,#080808)}
+.media-symbol{font:900 clamp(30px,5vw,68px)/1 "Archivo Black";letter-spacing:-.07em;color:#f2f0ec;text-shadow:4px 4px 0 var(--red);transform:rotate(-5deg)}
+.media-symbol span{color:var(--red);font-size:.6em;margin-left:10px}
+.media-card-copy{padding:25px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.media-card h3{font:900 clamp(28px,3vw,42px)/1 "Archivo Black";letter-spacing:-.04em;margin:12px 0 8px}
+.media-card p{font-size:14px;line-height:1.6;color:#aaa;flex:1}
+.media-link{display:inline-block;margin-top:12px;padding-bottom:5px;border-bottom:1px solid var(--red)}
+.members-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.member{transition:transform .25s,border-color .25s;background:linear-gradient(180deg,#0b0b0b,#070707)}
+.member:hover{transform:translateY(-5px);border-color:#6c2020}
+.member-photo{position:relative;aspect-ratio:4/5;background:radial-gradient(circle at 50% 35%,#321010,#111 60%,#080808)}
+.member-photo img{position:relative;z-index:1;object-position:center top;filter:grayscale(.45) contrast(1.05)}
+.member:hover .member-photo img{filter:grayscale(0) contrast(1.04)}
+.member-photo .placeholder{position:absolute;inset:0;display:none;place-items:center;font:900 32px "Archivo Black";letter-spacing:-.06em;color:#392020}
+.member-body{padding:22px 19px 25px}
+.member-role{font-size:12px;line-height:1.4}
+.member h3{font-size:clamp(23px,2.5vw,34px);letter-spacing:-.04em}
+.member p{font-size:13px;line-height:1.7;color:#aaa}
+.roster-note{margin-top:35px;padding:18px 20px;border-left:2px solid var(--red);background:#0b0b0b;color:#999;font-size:13px;line-height:1.6}
+.merch-layout{grid-template-columns:.85fr 1.15fr;gap:6vw}
+.merch-layout>div:first-child .btn{margin-top:15px}
+.merch-note{font-size:13px;color:#777;line-height:1.7;border-left:2px solid #632020;padding-left:15px}
+.merch-grid{gap:16px}
+.merch-card{display:grid;grid-template-columns:minmax(120px,.65fr) minmax(0,1fr);align-items:stretch;gap:22px;border:1px solid #2a2a2a;background:#090909;padding:15px}
+.merch-visual{position:relative;min-height:190px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at center,#272020 0,#0d0d0d 70%);border:1px solid #242020}
+.merch-visual:before{content:"";position:absolute;inset:10%;border:1px solid rgba(255,255,255,.035)}
+.merch-garment{position:relative;display:grid;place-items:center;width:70%;height:72%;background:linear-gradient(120deg,#202020,#080808 60%,#1a1a1a);clip-path:polygon(24% 0,39% 7%,61% 7%,76% 0,100% 20%,82% 39%,72% 29%,72% 100%,28% 100%,28% 29%,18% 39%,0 20%);filter:drop-shadow(0 10px 10px #000);color:#777;font:700 8px "Barlow Condensed";letter-spacing:.18em}
+.merch-visual-1 .merch-garment{width:74%;height:75%;background:linear-gradient(120deg,#242424,#080808 65%,#1b1b1b);clip-path:polygon(23% 0,38% 6%,62% 6%,77% 0,100% 15%,88% 40%,77% 32%,77% 100%,23% 100%,23% 32%,12% 40%,0 15%)}
+.merch-visual-3 .merch-garment{background:linear-gradient(120deg,#fff,#d8d8d8 65%,#f8f8f8);color:#333}
+.merch-mark{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);font:900 clamp(8px,1vw,12px) "Archivo Black";color:#c81d1d;text-shadow:0 1px #000;letter-spacing:-.06em;pointer-events:none}
+.merch-visual-3 .merch-mark{color:#c81d1d}
+.merch-info{min-width:0;padding:8px 4px}
+.merch-type{font:700 10px "Barlow Condensed";letter-spacing:.15em;color:var(--red)}
+.merch-card h3{font:800 clamp(21px,2.3vw,29px)/1.05 "Barlow Condensed";margin:10px 0}
+.merch-card p{font-size:12px;line-height:1.6;margin:0 0 18px;color:#999}
+.merch-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:9px 0;border-top:1px solid #252525;font:700 11px "Barlow Condensed";letter-spacing:.06em}
+.merch-meta span{color:#666}.merch-meta strong{color:#ddd;text-align:right}
+.epk-card{border-color:#3b2424}
+.contact-box{background:linear-gradient(145deg,#0b0b0b,#070707);padding:0 24px}
+footer{border-top:1px solid #1c1c1c}
+@media(max-width:900px){
+ .hero{min-height:88svh;grid-template-columns:1fr;padding-top:145px}
+ .hero-copy{max-width:650px}
+ .hero-logo{right:-8%;bottom:8%;opacity:.16}
+ .hero-logo img{width:70vw;max-height:none}
+ .hero-stamp{right:25px;bottom:28px}
+ .members-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .merch-layout{grid-template-columns:1fr;gap:35px}
+ .nav.nav-open{display:flex;position:absolute;top:82px;left:0;right:0;padding:22px 25px;background:#080808;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #333}
+ .nav.nav-open a{padding:14px 0;border-bottom:1px solid #222}
+ .nav.nav-open .nav-cta{padding:14px;margin-top:8px;text-align:center}
+}
+@media(max-width:560px){
+ .hero{min-height:82svh;padding:130px 24px 90px}
+ .hero h1{font-size:clamp(55px,15vw,88px)}
+ .hero-text{font-size:21px;max-width:340px}
+ .hero-actions{gap:8px}.btn{padding:0 14px;font-size:12px}
+ .hero-stamp{display:none}
+ .section{padding:78px 24px}
+ .manifesto-layout{gap:32px;margin-top:38px}
+ .band-photo{margin-top:40px}
+ .media-grid{grid-template-columns:1fr;gap:18px;margin-top:35px}
+ .members-grid{grid-template-columns:1fr 1fr;gap:10px;margin-top:35px}
+ .member-body{padding:15px 13px 18px}
+ .member h3{font-size:25px}
+ .member p{font-size:12px}
+ .member-role{font-size:10px}
+ .merch-card{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:10px}
+ .merch-visual{min-height:175px}
+ .merch-card h3{font-size:22px}
+ .merch-card p{font-size:11px}
+ .merch-meta{font-size:10px}
+ .contact-box{padding:0 14px}
+ footer{gap:15px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}*,*:before,*:after{transition:none!important}}
