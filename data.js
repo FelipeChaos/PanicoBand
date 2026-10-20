@@ -8,46 +8,70 @@ window.PANICO = {
     contactEmail: "",
     bookingWhatsapp: ""
   },
-
-  manifesto: `PÁNICO nace desde el ruido, la tensión y la necesidad de decir algo. Somos una banda de metal bogotana que no pretende caber en una sola etiqueta: dejamos que cada canción encuentre su propia forma, desde riffs pesados y una batería contundente hasta momentos que abren espacio para otras texturas y emociones.`,
-
-  bio: `Cuatro músicos, una misma necesidad: hacer canciones que tengan peso. PÁNICO construye su identidad desde el metal, pero evita las fronteras rígidas de un solo género. La banda apuesta por riffs que golpean, una base rítmica sólida y letras con algo que decir. El resultado es una propuesta directa, intensa y abierta a explorar.`,
-
+  groupPhoto: "https://drive.google.com/uc?export=view&id=1nw814Xuxfta4ALr7GA9vIhaN6tiocfNd",
+  manifesto: `PÁNICO nace desde el ruido, la tensión y la necesidad de decir algo. Somos una banda de metal bogotana que no se encierra en una sola etiqueta: riffs que golpean, una base rítmica contundente y canciones que exploran distintas intensidades sin pedir permiso.`,
+  bio: `Nuestra música se construye desde el encuentro entre las cuerdas, la batería y una puesta en escena directa. PÁNICO sigue creciendo y afinando su identidad con una idea clara: hacer ruido con intención y dejar que cada canción encuentre su propia forma.`,
   members: [
     {
-      name: "INTEGRANTE 01",
-      role: "Voz / instrumento",
-      photo: "assets/photos/member-01.jpg",
-      bio: "Reemplaza este texto por una descripción breve del integrante: trayectoria, influencias, rol dentro de PÁNICO y un rasgo que lo identifique."
+      name: "JEFFREY",
+      role: "Batería · El pulso",
+      photo: "https://drive.google.com/uc?export=view&id=17mVT-E50FzoWOEQtVql_CGg77IjB-vws",
+      bio: "Jeffrey convierte el ritmo en impacto. Cada golpe empuja la canción, levanta la tensión y marca el terreno para que el ruido avance. La batería no solo acompaña: hace latir a PÁNICO."
     },
     {
-      name: "INTEGRANTE 02",
-      role: "Guitarra",
-      photo: "assets/photos/member-02.jpg",
-      bio: "Reemplaza este texto por una descripción breve del integrante: trayectoria, influencias, rol dentro de PÁNICO y un rasgo que lo identifique."
+      name: "ANDREY",
+      role: "Bajo · La fuerza subterránea",
+      photo: "https://drive.google.com/uc?export=view&id=1jOX-Jj6m0Dqf-BkD93MG-xWan9g8FkuN",
+      bio: "El bajo es el puente entre el golpe de la batería y la descarga de las guitarras. Andrey sostiene el peso, le da profundidad al sonido y hace que cada riff se sienta en el cuerpo."
     },
     {
-      name: "INTEGRANTE 03",
-      role: "Bajo",
-      photo: "assets/photos/member-03.jpg",
-      bio: "Reemplaza este texto por una descripción breve del integrante: trayectoria, influencias, rol dentro de PÁNICO y un rasgo que lo identifique."
+      name: "JUAN",
+      role: "Voz · Presencia y fuego",
+      photo: "https://drive.google.com/uc?export=view&id=1tCuMWewuFaGEt5TqOOq3dHgpg1MFJXgi",
+      bio: "Juan lleva la energía de las canciones al frente. La voz conecta el mensaje con el público y la puesta en escena convierte cada tema en un encuentro intenso, frontal y sin jaulas."
     },
     {
-      name: "INTEGRANTE 04",
-      role: "Batería",
-      photo: "assets/photos/member-04.jpg",
-      bio: "Reemplaza este texto por una descripción breve del integrante: trayectoria, influencias, rol dentro de PÁNICO y un rasgo que lo identifique."
+      name: "FELIPE",
+      role: "Guitarra · Riffs y solos",
+      photo: "https://drive.google.com/uc?export=view&id=1AV5FmmboApZfxuwtc1kLTpCcr7nKt27p",
+      bio: "Felipe construye muros de riffs y abre grietas con solos que llevan la tensión más lejos. La guitarra marca el carácter, corta el aire y le da a cada canción su propia descarga."
     }
   ],
-
   media: [
-    { title: "Ensayo 01", type: "Ensayo", url: "", description: "Agrega aquí el enlace de YouTube o Google Drive." },
-    { title: "Ensayo 02", type: "Ensayo", url: "", description: "Agrega aquí el enlace de YouTube o Google Drive." },
-    { title: "Live / Demo", type: "En vivo", url: "", description: "Agrega aquí un video cuando esté disponible." }
+    {
+      title: "SANGRE",
+      type: "Video · Canción original",
+      url: "https://drive.google.com/file/d/1eJWqP2XzJpATaS81OrkUlbqxqHsJpIXg/preview",
+      description: "Dale play a una de las canciones de PÁNICO."
+    },
+    {
+      title: "LA BANDA",
+      type: "Foto grupal",
+      url: "https://drive.google.com/file/d/1nw814Xuxfta4ALr7GA9vIhaN6tiocfNd/view?usp=sharing",
+      description: "Cuatro perfiles presentados. La historia sigue creciendo."
+    }
   ],
-
   merch: [
-    { name: "Camiseta PÁNICO", description: "Camisetas oficiales de la banda.", price: "Consultar", url: "" },
-    { name: "Merch / edición especial", description: "Próximamente.", price: "Próximamente", url: "" }
+    {
+      name: "Hoodie PÁNICO",
+      description: "Hoodie negro con el logo pequeño en el frente.",
+      price: "Precio por confirmar",
+      sizes: "Tallas por confirmar",
+      image: "https://drive.google.com/uc?export=view&id=1nw814Xuxfta4ALr7GA9vIhaN6tiocfNd"
+    },
+    {
+      name: "Camiseta PÁNICO · Negra",
+      description: "Camiseta negra con logo pequeño al frente, en el pecho.",
+      price: "Precio por confirmar",
+      sizes: "Tallas por confirmar",
+      image: ""
+    },
+    {
+      name: "Camiseta PÁNICO · Blanca",
+      description: "Camiseta blanca con logo pequeño al frente, en el pecho.",
+      price: "Precio por confirmar",
+      sizes: "Tallas por confirmar",
+      image: ""
+    }
   ]
 };
