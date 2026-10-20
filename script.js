@@ -66,19 +66,14 @@
 
   const merchGrid = document.getElementById("merch-grid");
   (PANICO.merch || []).forEach((item, i) => {
-    const color = i === 2 ? "white" : "black";
     const garment = i === 0 ? "hoodie" : "tee";
-    const logo = item.logo || (color === "white" ? "assets/logo-original-black-red.png" : "assets/logo-original-red-white.png");
+    const color = i === 2 ? "white" : "black";
     const card = document.createElement("article");
     card.className = `merch-card merch-card-${garment} merch-card-${color}`;
     card.innerHTML = `
-      <div class="merch-visual merch-visual-${garment} merch-visual-${color}" role="img" aria-label="${escapeHTML(item.name)}: vista ilustrativa">
-        <div class="garment-shadow"></div>
-        <div class="garment-shape">
-          ${garment === "hoodie" ? '<span class="hood-shape"></span><span class="hoodie-pocket"></span>' : '<span class="tee-neck"></span>'}
-          <img class="merch-mark-img" src="${escapeHTML(logo)}" alt="">
-        </div>
-        <span class="mockup-label">VISTA ILUSTRATIVA</span>
+      <div class="merch-visual merch-visual-${garment} merch-visual-${color}">
+        <img class="merch-product-image" src="${escapeHTML(item.image || "")}" alt="${escapeHTML(item.name + " — mockup de referencia")}" loading="lazy" width="1122" height="1402"><img class="merch-logo-overlay merch-logo-${garment} merch-logo-${color}" src="${escapeHTML(item.logo || (color === "white" ? "assets/logo-original-black-red.png" : "assets/logo-original-red-white.png"))}" alt="" aria-hidden="true" loading="lazy">
+        <span class="mockup-label">MOCKUP DE REFERENCIA</span>
       </div>
       <div class="merch-info">
         <div class="merch-type">PÁNICO · MERCH OFICIAL · 0${i + 1}</div>
@@ -87,11 +82,38 @@
         <div class="merch-meta"><span>PRECIO</span><strong>${escapeHTML(item.price || "Por confirmar")}</strong></div>
         <div class="merch-meta"><span>TALLAS</span><strong>${escapeHTML(item.sizes || "Por confirmar")}</strong></div>
       </div>`;
-    const logoImg = card.querySelector(".merch-mark-img");
-    logoImg?.addEventListener("error", () => logoImg.remove());
+    const productImage = card.querySelector(".merch-product-image");
+    productImage?.addEventListener("error", () => {
+      productImage.alt = "Mockup de referencia pendiente de cargar";
+      card.classList.add("merch-image-unavailable");
+    });
     merchGrid?.appendChild(card);
   });
 
+  const merchCarousel = document.getElementById("merch-grid");
+  const merchCount = document.getElementById("merch-carousel-count");
+  const merchPrev = document.getElementById("merch-prev");
+  const merchNext = document.getElementById("merch-next");
+  const updateMerchCarousel = () => {
+    if (!merchCarousel) return;
+    const cards = [...merchCarousel.querySelectorAll(".merch-card")];
+    if (!cards.length) return;
+    const activeIndex = Math.max(0, cards.findIndex(card => card.offsetLeft >= merchCarousel.scrollLeft + merchCarousel.offsetLeft - 8));
+    const visibleCount = Math.max(1, Math.round(merchCarousel.clientWidth / (cards[0].getBoundingClientRect().width + 16)));
+    if (merchCount) merchCount.textContent = String(Math.min(activeIndex + 1, cards.length)).padStart(2,"0") + " / " + String(cards.length).padStart(2,"0");
+    if (merchPrev) merchPrev.disabled = merchCarousel.scrollLeft <= 4;
+    if (merchNext) merchNext.disabled = merchCarousel.scrollLeft + merchCarousel.clientWidth >= merchCarousel.scrollWidth - 4;
+  };
+  const scrollMerch = direction => {
+    const card = merchCarousel?.querySelector(".merch-card");
+    if (!merchCarousel || !card) return;
+    merchCarousel.scrollBy({ left: direction * (card.getBoundingClientRect().width + 16), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
+  merchPrev?.addEventListener("click", () => scrollMerch(-1));
+  merchNext?.addEventListener("click", () => scrollMerch(1));
+  merchCarousel?.addEventListener("scroll", updateMerchCarousel, { passive:true });
+  window.addEventListener("resize", updateMerchCarousel);
+  requestAnimationFrame(updateMerchCarousel);
 
   const galleryImages = (PANICO.slideshow || []).filter(item => item && item.src);
   const galleryImage = document.getElementById("gallery-image");
