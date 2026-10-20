@@ -195,3 +195,201 @@ footer { font-size: 13px; }
   .merch-meta { font-size: 11px; }
   .mockup-label { font-size: 8px; }
 }
+
+
+/* =========================================================
+   PÁNICO — revisión visual 02: escala contenida y editorial
+   Inspiración: sitios oficiales de bandas + diseño editorial.
+   ========================================================= */
+:root {
+  --red: #c82028;
+  --red2: #e33238;
+  --black: #090909;
+  --white: #f2f0ec;
+  --gray: #a6a19c;
+  --line: #292929;
+}
+body, button, input, textarea, select,
+h1, h2, h3, h4, p, a, nav, footer, .btn, .section-kicker,
+.eyebrow, .member-role, .merch-type, .merch-meta, .contact-line {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+body { font-size: 17px; line-height: 1.55; letter-spacing: .01em; }
+.site-header {
+  height: 70px;
+  padding: 0 clamp(22px, 4.5vw, 68px);
+  background: rgba(7,7,7,.94);
+  border-bottom: 1px solid #242424;
+}
+.brand img { width: 112px; max-height: 44px; object-fit: contain; }
+.nav { gap: clamp(12px,1.55vw,23px); font-size: 14px; letter-spacing: .07em; }
+.nav a { opacity: .82; }
+.nav .nav-cta { padding: 8px 12px; }
+.hero {
+  min-height: 680px;
+  min-height: min(760px, 94svh);
+  padding: 120px clamp(24px, 7vw, 100px) 72px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(250px, .95fr);
+  gap: clamp(24px, 4vw, 60px);
+  background:
+    radial-gradient(ellipse at 76% 45%, rgba(200,32,40,.17), transparent 36%),
+    linear-gradient(115deg,#080808 0%,#0c0b0b 56%,#080808 100%);
+}
+.hero-grid { opacity: .07; }
+.hero-copy { max-width: 590px; }
+.eyebrow { font-size: 13px; letter-spacing: .17em; }
+.hero h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(58px, 7.4vw, 108px);
+  line-height: .86;
+  letter-spacing: -.035em;
+  margin: 18px 0 22px;
+}
+.hero h1 span { margin-top: 5px; }
+.hero-text { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.35; max-width: 440px; }
+.hero-logo img { width: min(34vw, 450px); max-height: 43vh; }
+.hero-stamp { font-size: 10px; bottom: 24px; }
+.hero:after { font-size: clamp(120px, 17vw, 240px); opacity: .55; }
+.hero-actions { gap: 10px; margin-top: 26px; }
+.btn { min-height: 43px; padding: 0 16px; font-size: 13px; letter-spacing: .08em; }
+.scroll-cue { font-size: 10px; bottom: 22px; }
+.ticker div { padding: 9px 0; font-size: 17px; letter-spacing: .13em; }
+.section {
+  padding: clamp(64px, 6.5vw, 92px) clamp(24px, 7vw, 100px);
+  scroll-margin-top: 70px;
+}
+.section-kicker { font-size: 12px; letter-spacing: .17em; }
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(42px, 5.4vw, 76px);
+  line-height: .91;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+.manifesto-layout, .merch-layout, .contact-layout {
+  margin-top: 38px;
+  gap: clamp(30px, 5vw, 70px);
+}
+.manifesto-copy .lead { font-size: clamp(22px, 2.4vw, 31px); line-height: 1.2; }
+.manifesto-copy p:not(.lead), .section-head > p,
+.merch-layout > div:first-child p, .contact-layout p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+.facts { margin-top: 28px; }
+.facts strong { font-size: 32px; }
+.facts span { font-size: 12px; }
+.band-photo { margin-top: 42px; max-height: 570px; }
+.band-photo img { max-height: 570px; object-position: center 40%; }
+.band-photo figcaption { padding: 12px 16px; font-size: 10px; }
+.section-head { margin-top: 18px; gap: 34px; }
+.section-head > p { max-width: 330px; }
+.media-grid { margin-top: 34px; gap: 16px; }
+.media-card { border: 1px solid #282828; }
+.media-card-copy { padding: 20px; }
+.media-card h3 { font-size: clamp(26px, 2.5vw, 35px); margin: 9px 0 6px; }
+.media-card p { font-size: 15px; line-height: 1.5; }
+.media-type { font-size: 11px; letter-spacing: .12em; }
+.media-link { font-size: 11px; }
+.members-grid { margin-top: 34px; gap: 14px; }
+.member-photo { aspect-ratio: 4/4.7; }
+.member-body { padding: 16px 16px 18px; }
+.member-role { font-size: 11px; letter-spacing: .1em; }
+.member h3 { font-size: clamp(22px, 2vw, 29px); margin: 7px 0 10px; }
+.member p { font-size: 15px; line-height: 1.5; }
+.roster-note { margin-top: 24px; padding: 14px 17px; font-size: 13px; }
+.merch-section { background: #f2f0eb; color: #171615; }
+.merch-layout { grid-template-columns: minmax(220px,.75fr) minmax(0,1.25fr); gap: clamp(28px,4vw,60px); }
+.merch-layout > div:first-child p { color: #504c47; }
+.merch-note { font-size: 13px !important; }
+.merch-grid { gap: 12px; }
+.merch-card {
+  grid-template-columns: minmax(145px,.72fr) minmax(0,1fr);
+  gap: 18px;
+  padding: 13px;
+  border: 1px solid #ddd8d0;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(25,20,15,.04);
+}
+.merch-visual { min-height: 205px; background: #f3f1ed; border-color: #e8e3dc; }
+.merch-card h3 { font-size: clamp(22px,2vw,28px); margin: 7px 0; }
+.merch-card p { font-size: 14px; line-height: 1.45; margin-bottom: 12px; }
+.merch-type { font-size: 10px; letter-spacing: .1em; }
+.merch-meta { padding: 7px 0; font-size: 11px; }
+.mockup-label { font-size: 9px; }
+.instagram-inline { font-size: 11px; }
+.merch-section .btn { margin-top: 12px; }
+.epk-section { padding-top: 65px; padding-bottom: 65px; }
+.epk-card { padding: clamp(28px,4vw,48px); gap: 32px; }
+.epk-card h2 { font-size: clamp(42px,5vw,70px); margin: 12px 0 16px; }
+.epk-card p { font-size: 16px; }
+.epk-actions { gap: 8px; }
+.contact-line { font-size: 15px; padding: 16px 0; }
+.contact-box { padding: 0 20px; }
+footer { padding: 24px clamp(24px,7vw,100px); font-size: 11px; gap: 16px; }
+footer img { width: 88px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--red2); outline-offset: 4px; }
+@media (max-width: 900px) {
+  .site-header { height: 66px; }
+  .hero { min-height: 650px; min-height: 86svh; padding: 115px 30px 68px; }
+  .hero h1 { font-size: clamp(60px, 10vw, 90px); }
+  .hero-logo { right: -5%; bottom: 8%; opacity: .15; }
+  .hero-logo img { width: 56vw; max-height: none; }
+  .hero-copy { max-width: 570px; }
+  .section { padding: 68px 30px; }
+  .nav.nav-open { top: 66px; }
+  .members-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .merch-layout { grid-template-columns: 1fr; gap: 26px; }
+  .merch-layout > div:first-child { max-width: 650px; }
+  .section-head > p { max-width: 470px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .site-header { padding: 0 19px; }
+  .brand img { width: 96px; }
+  .hero { min-height: 690px; min-height: 88svh; padding: 118px 23px 75px; display: block; }
+  .hero-copy { max-width: 100%; }
+  .hero h1 { font-size: clamp(54px, 14vw, 76px); margin: 18px 0; }
+  .hero-text { max-width: 340px; font-size: 19px; }
+  .hero-logo { right: -6%; bottom: 8%; opacity: .11; }
+  .hero-logo img { width: 66vw; }
+  .hero-stamp { display: none; }
+  .hero-actions { max-width: 340px; flex-direction: column; align-items: flex-start; }
+  .hero-actions .btn { min-height: 42px; }
+  .scroll-cue { left: 23px; font-size: 9px; }
+  .ticker div { font-size: 15px; }
+  .section { padding: 62px 22px; }
+  h2 { font-size: clamp(40px, 10vw, 58px); }
+  .manifesto-layout { grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+  .manifesto-copy .lead { font-size: 24px; }
+  .manifesto-copy p:not(.lead), .section-head > p,
+  .merch-layout > div:first-child p, .contact-layout p { font-size: 16px; }
+  .facts { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .facts div { padding: 13px 8px 0; border-right: 1px solid #333; border-bottom: 0; }
+  .facts strong { font-size: 28px; }
+  .band-photo { margin-top: 30px; }
+  .media-grid { grid-template-columns: 1fr; margin-top: 25px; }
+  .media-card-copy { padding: 17px; }
+  .members-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .member-body { padding: 13px 11px 15px; }
+  .member h3 { font-size: 22px; }
+  .member p { font-size: 13px; }
+  .member-role { font-size: 10px; }
+  .merch-card { grid-template-columns: minmax(110px,.72fr) minmax(0,1fr); gap: 12px; padding: 10px; }
+  .merch-visual { min-height: 170px; }
+  .merch-card h3 { font-size: 21px; }
+  .merch-card p { font-size: 13px; }
+  .merch-meta { font-size: 10px; }
+  .merch-mark-img { max-width: 54px; }
+  .epk-card { padding: 25px 20px; }
+  .epk-card h2 { font-size: 43px; }
+  .epk-actions { flex-direction: column; align-items: stretch; }
+  .contact-layout { grid-template-columns: 1fr; gap: 25px; }
+  .contact-box { padding: 0 14px; }
+  .contact-line { font-size: 14px; }
+  footer { display: flex; flex-wrap: wrap; padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
